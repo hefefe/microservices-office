@@ -1,0 +1,34 @@
+server:
+  port: 8090
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+  data:
+    redis:
+      database: 0
+      host: localhost
+      password: zaq1@WSX
+      port: 6379
+  mail:
+    host: smtp.gmail.com
+    password: ENC(N7lnj8solc9IqvoGOB5iBjVuvMawyZygsFqDHMzFWG+k9PfBsDKMDSPXyBKkLCBWqhsHO4AkELy0T0PKh1mYUw==)
+    username: java213769420@gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+office-notifier:
+  templateName: MailTemplate
+  kafka:
+    topics:
+      email:
+        name: pl.pk.office.email
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithHmacSHA512AndAES_256

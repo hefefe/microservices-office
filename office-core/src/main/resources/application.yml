@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:9000/office_core_db
+    username: postgres
+    password: postgres
+  liquibase:
+    change-log: classpath:db/changelog/changelog.yml
+  kafka:
+    bootstrap-servers: localhost:29092
+
+office-core:
+  kafka:
+    topics:
+      email:
+        name: pl.pk.office.email
+        partitions: 2
+        replicationFactor: 1
